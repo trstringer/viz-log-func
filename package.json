@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "documentdb": "^1.9.0"
+    "documentdb": "^1.9.0",
+    "twilio": "^2.9.2"
   }
 }
