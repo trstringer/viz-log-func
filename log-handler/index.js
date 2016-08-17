@@ -10,12 +10,6 @@ function sendSms(to, message, callback) {
 }
 
 module.exports = function (context, myQueueItem) {
-  // process.env.TWILIO_RECIPIENTS.split(',').forEach((phoneNum) => {
-  //   console.log(`sending message to ${phoneNum}`);
-  //   sendSms(phoneNum, 'yOu H@v3 b33n h@ck3dd!!!1!1!!one!!');
-  // });
-  // return;
-
   var smsMessage;
 
   if (myQueueItem.Group) {
@@ -30,7 +24,6 @@ module.exports = function (context, myQueueItem) {
 
     if (smsMessage) {
       process.env.TWILIO_RECIPIENTS.split(',').forEach((phoneNum) => {
-        // console.log(`sending message to ${phoneNum}`);
         sendSms(phoneNum, smsMessage, (err) => {
           context.log(err.message);
         });
