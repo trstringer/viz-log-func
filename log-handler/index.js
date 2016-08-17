@@ -13,7 +13,7 @@ function generateRandomVipMessage(vipName) {
     `Partayyyyyyyyyy tyme!!! ${vipName} just arrrrrriiivvvveed!`,
     `O_O o_O ${vipName} is here and we can't believe our eyes O_O`,
     `Czech yo'self b4 u reck yo'self.... ${vipName} is heeeeere!!`,
-    `${vipName} is hear in the phlesh........ and plexin!!`,
+    `${vipName} is hear in the phlesh........ and phlexin!!`,
     `Next round is on us! ${vipName} just came in!!`,
     `Wowzas wowzas WOWZAS!!! ${vipName} showed up and it's happenin NOW!!`
   ];
