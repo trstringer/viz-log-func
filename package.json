@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "documentdb": "^1.9.0",
+    "trill": "^1.0.4",
     "twilio": "^2.9.2"
   }
 }

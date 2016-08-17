@@ -1,5 +1,6 @@
 const DocumentClient = require('documentdb').DocumentClient;
 const twilioClient = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
+const trill = require('trill');
 
 function sendSms(to, message, callback) {
   twilioClient.messages.create({
@@ -9,6 +10,19 @@ function sendSms(to, message, callback) {
   }, callback);
 }
 
+function sendTweet(tweetText, callback) {
+  const twitterAuth = {
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+  };
+
+  const tweet = { text: tweetText };
+
+  trill(twitterAuth, tweet, callback);
+}
+
 module.exports = function (context, myQueueItem) {
   var smsMessage;
 
@@ -16,6 +30,11 @@ module.exports = function (context, myQueueItem) {
     switch (myQueueItem.Group.toLowerCase()) {
       case 'vip':
         smsMessage = `Heads up! A VIP (${myQueueItem.Name}) just entered the club!! Go greet him/her!`;
+        sendTweet(`Whoa! A VIP is here! Welcome to SanDUBsky, ${myQueueItem.Name}!`, (err) => {
+          if (err) {
+            context.log(err.message);
+          }
+        });
         break;
       case 'criminal':
         smsMessage = `ALERT!!! A known criminal (${myQueueItem.Name}) has entered the club. Call the police IMMEDIATELY!`;
