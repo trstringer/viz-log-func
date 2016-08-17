@@ -2,6 +2,25 @@ const DocumentClient = require('documentdb').DocumentClient;
 const twilioClient = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 const trill = require('trill');
 
+function generateRandomVipMessage(vipName) {
+  const randomVipMessages = [
+    `Nooooooo wayyyyyy!! Our fav VIP, ${vipName} is here!`,
+    `Oh...my....gosh... ${vipName} just arrived! Party starts...NOW!`,
+    `I dunno where you are at, but ${vipName} is here and it's going DOWN!`,
+    `Check it out!!! <3 <3 <3 ${vipName} <3 <3 <3 is here now!`,
+    `Whaaaa!!! ${vipName} just showed up!!!11!1!one!1!`,
+    `Yeah yeah yeah! ${vipName} is in the HIZZZOUSSSEEEEE!!`,
+    `Partayyyyyyyyyy tyme!!! ${vipName} just arrrrrriiivvvveed!`,
+    `O_O o_O ${vipName} is here and we can't believe our eyes O_O`,
+    `Czech yo'self b4 u reck yo'self.... ${vipName} is heeeeere!!`,
+    `${vipName} is hear in the phlesh........ and plexin!!`,
+    `Next round is on us! ${vipName} just came in!!`,
+    `Wowzas wowzas WOWZAS!!! ${vipName} showed up and it's happenin NOW!!`
+  ];
+
+  return randomVipMessages[Math.floor(Math.random() * randomVipMessages.length)];
+}
+
 function sendSms(to, message, callback) {
   twilioClient.messages.create({
     body: message,
@@ -30,7 +49,7 @@ module.exports = function (context, myQueueItem) {
     switch (myQueueItem.Group.toLowerCase()) {
       case 'vip':
         smsMessage = `Heads up! A VIP (${myQueueItem.Name}) just entered the club!! Go greet him/her!`;
-        sendTweet(`Whoa! A VIP is here! Welcome to SanDUBsky, ${myQueueItem.Name}!`, (err) => {
+        sendTweet(generateRandomVipMessage(myQueueItem.Name), (err) => {
           if (err) {
             context.log(err.message);
           }
