@@ -4,18 +4,18 @@ const trill = require('trill');
 
 function generateRandomVipMessage(vipName) {
   const randomVipMessages = [
-    `Nooooooo wayyyyyy!! Our fav VIP, ${vipName} is here!`,
-    `Oh...my....gosh... ${vipName} just arrived! Party starts...NOW!`,
-    `I dunno where you are at, but ${vipName} is here and it's going DOWN!`,
-    `Check it out!!! <3 <3 <3 ${vipName} <3 <3 <3 is here now!`,
-    `Whaaaa!!! ${vipName} just showed up!!!11!1!one!1!`,
-    `Yeah yeah yeah! ${vipName} is in the HIZZZOUSSSEEEEE!!`,
-    `Partayyyyyyyyyy tyme!!! ${vipName} just arrrrrriiivvvveed!`,
-    `O_O o_O ${vipName} is here and we can't believe our eyes O_O`,
-    `Czech yo'self b4 u reck yo'self.... ${vipName} is heeeeere!!`,
-    `${vipName} is hear in the phlesh........ and phlexin!!`,
-    `Next round is on us! ${vipName} just came in!!`,
-    `Wowzas wowzas WOWZAS!!! ${vipName} showed up and it's happenin NOW!!`
+    `Nooooooo wayyyyyy!! Our fav VIP, ${vipName} is here! #XboxOneS`,
+    `Oh...my....gosh... ${vipName} just arrived! Party starts...NOW! #XboxOneS`,
+    `I dunno where you are at, but ${vipName} is here and it's going DOWN! #XboxOneS`,
+    `Check it out!!! <3 <3 <3 ${vipName} <3 <3 <3 is here now! #XboxOneS`,
+    `Whaaaa!!! ${vipName} just showed up!!!11!1!one!1! #XboxOneS`,
+    `Yeah yeah yeah! ${vipName} is in the HIZZZOUSSSEEEEE!! #XboxOneS`,
+    `Partayyyyyyyyyy tyme!!! ${vipName} just arrrrrriiivvvveed! #XboxOneS`,
+    `O_O o_O ${vipName} is here and we can't believe our eyes O_O #XboxOneS`,
+    `Czech yo'self b4 u reck yo'self.... ${vipName} is heeeeere!! #XboxOneS`,
+    `${vipName} is hear in the phlesh........ and phlexin!! #XboxOneS`,
+    `Next round is on us! ${vipName} just came in!! #XboxOneS`,
+    `Wowzas wowzas WOWZAS!!! ${vipName} showed up and it's happenin NOW!! #XboxOneS`
   ];
 
   return randomVipMessages[Math.floor(Math.random() * randomVipMessages.length)];
