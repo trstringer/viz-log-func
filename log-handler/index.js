@@ -31,7 +31,9 @@ module.exports = function (context, myQueueItem) {
     if (smsMessage) {
       process.env.TWILIO_RECIPIENTS.split(',').forEach((phoneNum) => {
         // console.log(`sending message to ${phoneNum}`);
-        sendSms(phoneNum, smsMessage);
+        sendSms(phoneNum, smsMessage, (err) => {
+          context.log(err.message);
+        });
       });
     }
   }
