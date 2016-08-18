@@ -56,7 +56,7 @@ module.exports = function (context, myQueueItem) {
         });
         break;
       case 'criminal':
-        smsMessage = `ALERT!!! A known criminal (${myQueueItem.Name}) has entered the club. Call the police IMMEDIATELY!`;
+        smsMessage = `ALERT!!! A banned person (${myQueueItem.Name}) has attempted to enter the club. Take the appropriate action!`;
         break;
     }
 
