@@ -2,6 +2,8 @@ const DocumentClient = require('documentdb').DocumentClient;
 const twilioClient = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 const trill = require('trill');
 
+// test dev comment
+
 function generateRandomVipMessage(vipName) {
   const randomVipMessages = [
     `Nooooooo wayyyyyy!! Our fav VIP, ${vipName} is here! #XboxOneS`,
