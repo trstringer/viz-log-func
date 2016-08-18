@@ -4,7 +4,7 @@
       "name": "myQueueItem",
       "type": "queueTrigger",
       "direction": "in",
-      "queueName": "viz-log",
+      "queueName": "viz-log-dev",
       "connection": "tstringerstorage_STORAGE"
     }
   ],
